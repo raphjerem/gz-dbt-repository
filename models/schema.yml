@@ -1,0 +1,30 @@
+version: 2
+
+sources:
+  - name: raw
+    schema: gz_raw_data
+    description: "This dataset contains raw data imported directly from the source systems."
+    tables:
+    - name: product
+      description: "product purchase prices by products_id"
+      #description: "Clé primaire unique pour cette table"
+      columns: 
+       - name: products_id
+         description : Primary Key
+         tests:
+           - unique
+           - not_null
+      identifier: raw_gz_product
+    - name: sales
+      description: "Sales transactions data with one row per product per order."
+      identifier: raw_gz_sales
+    - name: ship
+      description: "various cost of shipping by orders_id."
+      #description: "Clé primaire unique pour cette table"
+      columns: 
+       - name: orders_id
+         description : Primary Key
+         tests:
+           - unique
+           - not_null
+      identifier: raw_gz_ship
