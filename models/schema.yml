@@ -20,6 +20,7 @@ sources:
       identifier: raw_gz_sales
     - name: ship
       description: "various cost of shipping by orders_id."
+      #description: "Clé primaire unique pour cette table"
       columns: 
        - name: orders_id
          description : Primary Key
